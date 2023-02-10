@@ -13,9 +13,15 @@ export default function Search() {
     useEffect(() => {
         const getUsers = async () => {
             try {
-                const response = await fetch("https://jsonplaceholder.typicode.com/users");
-                const data = await response.json();
+                // Using fetch
+                // const response = await fetch("https://jsonplaceholder.typicode.com/users");
+                // const data = await response.json();
+
+                // Using Axios
+                const { data } = await axios.get("https://jsonplaceholder.typicode.com/users");
+
                 setData(data);
+
             } catch (err) {
                 console.error(err);
             }
